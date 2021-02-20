@@ -19,6 +19,10 @@ class ViewController: UIViewController {
 
     @IBAction func keyPressed(_ sender: UIButton) {
         playSound(soundName: (sender.titleLabel?.text)!)
+        sender.alpha = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+            sender.alpha = 1.0
+        }
     }
 
     func playSound(soundName: String) {
